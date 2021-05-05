@@ -58,6 +58,7 @@
 
 ## Dev 스터디 정리 <a id="temp"></a>
 
+* [HTTP 배운 내용 정리](temp/http.md)
 * [DI 와 각종 패턴](temp/di.md)
 
 ## 복습 주기

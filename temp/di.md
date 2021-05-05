@@ -704,7 +704,7 @@ private final ConnectionMaker conntionMaker =new JejuConnectionMaker();
 
   실제로 변하는 것을 각각에 전략에 맞게 꽂아주는 패턴
 
-* 변하지 않는 것을 그대로 두고
+* **변하지 않는 것을 그대로 두고**
 
    변하는 것의 구현체를 상황에 따라 바꿔주는 필요에 따라 전략을 바꿔주는 패턴
 

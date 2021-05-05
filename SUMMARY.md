@@ -56,7 +56,7 @@
 
 * [나의 resume](resume/resume.md)
 
-## Web <a id="temp"></a>
+## Dev 스터디 정리 <a id="temp"></a>
 
 * [DI 와 각종 패턴](temp/di.md)
 

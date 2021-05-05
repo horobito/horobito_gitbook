@@ -1,2 +1,2 @@
-# \[DDD start\] 도서 정리
+# \[DDD start\] 스터디 정리
 

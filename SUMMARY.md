@@ -16,7 +16,7 @@
 
 ## DDD
 
-* [\[DDD start\] 도서 정리](ddd/ddd-start/README.md)
+* [\[DDD start\] 스터디 정리](ddd/ddd-start/README.md)
   * [3. 애그리거트](ddd/ddd-start/3..md)
   * [2. 아키텍쳐 개요](ddd/ddd-start/2..md)
   * [1. 도메인 모델 시작](ddd/ddd-start/1-..md)

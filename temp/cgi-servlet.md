@@ -174,113 +174,168 @@
   * 빈을 관리해주는 xml기반의 Spring web ApplicationContext 정의하는 부분
   * Spring MVC에 관한 정의들에 특화시켜놓음
 
-이후는 실습 내용
+## 03. 실습 내용
 
 * 서블릿을 3개만 추가했는데 web.xml파일 줄 수가 매우 많다.
-
-=&gt; 서블릿이 커지면 커질수록 그 줄 수가 비례
-
+  * =&gt; 서블릿이 커지면 커질수록 그 줄 수가 비례
 * 이제 이걸 바꿀 예정
-* &gt; Q. 어떻게?
+  * &gt; Q. 어떻게?
+  * A. build.gradle에서 코드를 추가해서
+  * ```text
+    implementation "org.springframework:spring-core:${springVersion}"
+    implementation "org.springframework:spring-context:${springVersion}"
+    implementation "org.springframework:spring-jdbc:${springVersion}"
+    implementation "org.springframework:spring-webmvc:${springVersion}“
+    ```
 
-A. build.gradle에서 코드를 추가해서
 
-implementation "org.springframework:spring-core:${springVersion}"
 
-implementation "org.springframework:spring-context:${springVersion}"
+* Q. 왜 이렇게 하는가? A. 의존성을 추가해서 스프링의 기능을 서버가 하도록??
 
-implementation "org.springframework:spring-jdbc:${springVersion}"
 
-implementation "org.springframework:spring-webmvc:${springVersion}“
 
-Q. 왜 이렇게 하는가?
+* + group 위에다가 스프링 버전을 나타내는 코드 추가
+  * ```text
+    ext {
+    springVersion = '5.1.6.RELEASE'
+    }
+    ```
 
-A. 의존성을 추가해서 스프링의 기능을 서버가 하도록??
 
-+ group 위에다가 스프링 버전을 나타내는 코드 추가
 
-ext {
 
-springVersion = '5.1.6.RELEASE'
 
-}
+* Q. 스프링은 서블릿이 몇 개?  A. 1개 
+* Q. 그 서블릿의 이름은?  A. Dispatcher Servlet
 
-Q. 스프링은 서블릿이 몇 개? A. 1개
 
-Q. 그 서블릿의 이름은? A. Dispatcher Servlet
 
-cf\) 요즘은 Dispatcher Servlet말고
+* cf\) 요즘은 Dispatcher Servlet말고 Dispatcher Handler 라는 것이 존재 Dispatcher Handler : Reactive 한 스프링
 
-Dispatcher Handler 라는 것이 존재
 
-Dispatcher Handler : Reactive 한 스프링
 
-방법
+* 방법
+  * 1 .일단 web.xml 내 서블릿을 다 밀어버린다.
 
-1. 일단 web.xml 내 서블릿을 다 밀어버린다.
+    * 주의할 점
+    * &gt; Spring MVC에서 Root WebApplication Context 와 Servlet WebApplication Context가 어떻게 상호작용하는지 주의깊 관찰해라
 
-* 주의할 점
-* &gt; Spring MVC에서
+  * 2 .서블릿 등록
+    * web.xml에서
+      * ```text
+        <context-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/root-context.xml</param-value>
+        </context-param>
+        ```
+      * 등록
+    * web ApplicationContext= servletContext가 로딩이 되면서 특정한 파라미터를 받는것을 보이는 예시코드 이다.
+    * 위에 예시는 WEB-INF/root-context.xml에 있는 빈들을 ApplicationContext로 로딩해오는 것이다.
+  * web.xml
+    * ```text
+      <context-param>
+          <param-name>contextConfigLocation</param-name>
+          <param-value>/WEB-INF/root-context.xml</param-value>
+      </context-param>
+      ```
+    * web ApplicationContext, 즉 servletContext가 로딩이 되면서 특정한 파라미터를 받는 것을 나타내는 코드이다.
+    * 위의 예시는  **WEB-INF/root-context.xml에 있는 빈들을 ApplicationContext로 로딩**해오는 것이다.
 
-Root WebApplication Context 와
+\*\*\*\*
 
-Servlet WebApplication Context가
+* **dispatcher 서블릿 정의 및 매핑**
+  * ```text
+    <servlet>
+          <sevlet-name>dispatcherServlet</sevlet-name>
+          <sevlet-class>org.springframework.web.sevlet.DispatcherServlet</sevlet-class>// 실제 컨트롤러(MVC패턴의 컨트롤러, Spring에서의 개념과 다른 거임)
+          <init-param>//dispatcherServlet이 처음 init될 때 로딩을 할 때 빈과 관련 된 정의들을 로딩하는 것
+    	        <param-name>contextConfigLocation</param-name>
+            	<param-value>/WEB-INF/dispatcher-servlet.xml</param-value>	
+           </init-param>
+           <load-on-startup>1</load-on-startup>//서블릿은 요청이 될 때 init이 되어야함// 이부분은 처음부터 로딩하라는 의미임 안에 숫자는 우선순위(1이 제일 높음)
+    </servlet>
+    <sevlet-mapping>
+    	<sevlet-name>dispatcherServlet</sevlet-name>
+    	<url-pattern>/</url-pattern>
+    </sevlet-mapping>
+    ```
 
-어떻게 상호작용하는지 주의깊과 관찰해라
+####  <a id="ApplicationContext&#xC758;-&#xACC4;&#xCE35;&#xAD6C;&#xC870;"></a>
 
-1. Root Web Application을 만들 때,
+* Application Context의 계층구조
+  * root-context와 dispatcher-sevlet **둘다 Application Context**이다
+  * sevlet안에는 이러한 dispatcher-sevlet이 여러개가 존재할 거임
+  * 계층구조를 이용해서 공통되는 것들은 root- context에 정의하고 하위에 의존되는 것들은 하위에 정의하는 식
+  * 그러나 root-context는 거의 사용되지 않는다.-&gt; 대부분의 웹애플리케이션은 단독으로 존재하기 때문 
+  * -&gt; 이건 그냥 **계층구조를 보여주기 위한 예시**임
 
-context param 이라는 것을 사용하여
 
-xml을 분리시킬 수 있다. - ???
 
-1. 서블릿 등록
+* 위에 코드까지 작성하면 LifeCycle중 **dispatcher sevlet부분**이 끝난 것
 
-web.xml에서`1<context-param> 2 <param-name>contextConfigLocation</param-name> 3 <param-value>/WEB-INF/root-context.xml</param-value> 4</context-param>`
-
-* web ApplicationContext= servletContext가 로딩이 되면서 특정한 파라미터를 받는것을 보이는 예시코드 이다.
-* 위에 예시는 WEB-INF/root-context.xml에 있는 빈들을 ApplicationContext로 로딩해오는 것이다.
-
-web.xml`1<context-param> 2 <param-name>contextConfigLocation</param-name> 3 <param-value>/WEB-INF/root-context.xml</param-value> 4</context-param>`
-
-* web ApplicationContext,즉 servletContext가 로딩이 되면서 특정한 파라미터를 받는 것을 나타내는 코드이다.
-* 위의 예시는 **WEB-INF/root-context.xml에 있는 빈들을 ApplicationContext로 로딩**해오는 것이다.
-
-**dispatcher 서블릿 정의 및 매핑**`1<servlet> 2 <sevlet-name>dispatcherServlet</sevlet-name> 3 <sevlet-class>org.springframework.web.sevlet.DispatcherServlet</sevlet-class>// 실제 컨트롤러(MVC패턴의 컨트롤러, Spring에서의 개념과 다른 거임) 4 <init-param>//dispatcherServlet이 처음 init될 때 로딩을 할 때 빈과 관련 된 정의들을 로딩하는 것 5 <param-name>contextConfigLocation</param-name> 6 <param-value>/WEB-INF/dispatcher-servlet.xml</param-value> 7 </init-param> 8 <load-on-startup>1</load-on-startup>//서블릿은 요청이 될 때 init이 되어야함// 이부분은 처음부터 로딩하라는 의미임 안에 숫자는 우선순위(1이 제일 높음) 9</servlet> 10<sevlet-mapping> 11 <sevlet-name>dispatcherServlet</sevlet-name> 12 <url-pattern>/</url-pattern> 13</sevlet-mapping>`
-
-####  ApplicationContext의 계층구조 <a id="ApplicationContext&#xC758;-&#xACC4;&#xCE35;&#xAD6C;&#xC870;"></a>
-
-* root-context와 dispatcher-sevlet **둘다 ApplicationContext**이다
-* sevlet안에는 이러한 dispatcher-sevlet이 여러개가 존재할 거임
-* 계층구조를 이용해서 공통되는 것들은 root- context에 정의하고 하위에 의존되는 것들은 하위에 정의하는 식
-* 그러나 root-context는 거의 사용되지 않는다.-&gt; 대부분의 웹애플리케이션은 단독으로 존재하기 때문
-
--&gt; 이건 그냥 **계층구조를 보여주기 위한 예시**임
-
-위에 코드까지 작성하면 LifeCycle중 **dispatcher sevlet부분**이 끝난 것
+####  <a id="Spring&#xC758;-Controller"></a>
 
 #### Spring의 Controller <a id="Spring&#xC758;-Controller"></a>
 
-`1public class SimpleController implments Controller{// 이것을 상속받아서 구현하면됨 2 @override 3 public ModelAndView handlerRequest(HttpServletRequest request,HttpServletResponse response ) throws Exception{ 4 return null; 5 } 6}`
+* ```text
+  public class SimpleController implments Controller{// 이것을 상속받아서 구현하면됨
+       @override     
+      public ModelAndView handlerRequest(HttpServletRequest request,HttpServletResponse response ) throws Exception{
+      return null;
+    }
+  }
+  ```
 
-* 이것을 구현만 하면 Spring의 Controller역할을 수행하는 것
-* 실제 비지니스 로직을 연결해주는 역할을 담당\(HandlerAdapter\) cf\) Conroller를 implement할 때 받아온 handlerRequest메소드를 HandlerAdapter라고 한다.
+  * 이것을 구현만 하면 Spring의 Controller역할을 수행하는 것
+  * 실제 비지니스 로직을 연결해주는 역할을 담당\(Handler Adapter\) cf\) Controller를 implement할 때 받아온 handler Request메소드를 Handler Adapter라고 한다.
 
- `1@Controller 2@RequestMapping 3public class HelloController { 4 5 @RequestMapping("/hello") 6 public ModelAndView hello(){ 7 ModelAndView modelAndView= new ModelAndView("index"); 8 modelAndView.addObject("title", "제하"); 9 modelAndView.addObject("hello", "서버키고싶당"); 10 return modelAndView; 11 } 12}`
+* ```text
+  @Controller
+  @RequestMapping
+  public class HelloController {
 
-* 여기서 ModelAndView는 Spring에서 제공하는 모델을 담는 그릇이자, 뷰\(view\)를 정의하는 그릇
-* 데이터를 전달하고, 어떤 뷰에 그릴거야 라는 것을 한꺼번에 정의할 수 있는 것
+      @RequestMapping("/hello")
+      public ModelAndView hello(){
+          ModelAndView modelAndView= new ModelAndView("index");
+          modelAndView.addObject("title", "제하");
+          modelAndView.addObject("hello", "서버키고싶당");
+      return modelAndView;
+      }
+  }
+  ```
 
-컨트롤러를 만들면 dispatcher servlet.xml에서 위에서 만든 컨트롤러 정의해주고 viewResolver를 정의해준다.
+  * 여기서 ModelAndView는 Spring에서 제공하는 모델을 담는 그릇이자, 뷰\(view\)를 정의하는 그릇
+  * 데이터를 전달하고, 어떤 뷰에 그릴거야 라는 것을 한꺼번에 정의할 수 있는 것
 
-dispatcher-servlet.xml`1<context:component-scan base-package="springhello"/>//어노테이션 기반으로 빈을 정의한 것을 읽어오는 역할`
 
-Spring에서 제공하는 Spring MVC의 Controller는 이름이 바로 패스가 된다.`1 <beans:bean name="/index" class="springhello.HelloController"> 2 <beans:constructor-arg name="userDao" ref="userDao"/> 3 </beans:bean>`
 
-ViewResolver 정의하는 코드`1 <beans:bean name="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 2 <beans:property name="prefix" value="/WEB-INF/views/" /> 3 <beans:property name="suffix" value=".jsp"/> 4 </beans:bean>`
+* 컨트롤러를 만들면 dispatcher servlet.xml에서 위에서 만든 컨트롤러 정의해주고 viewResolver를 정의해준다.
+  * dispatcher-servlet.xml
+    * ```text
+      <context:component-scan base-package="springhello"/>//어노테이션 기반으로 빈을 정의한 것을 읽어오는 역할 
 
-* 위의 코드처럼 할 경우, 요청을 한 패스의 이름을 가진 jsp파일에 결과를 전달하게 된다.
-* 예시의 경우 “/index“가 패스 이기때문에 index.jsp파일을 찾아서 결과를 전달한다.
+      ```
+
+
+
+* Spring에서 제공하는 Spring MVC의 Controller는 이름이 바로 패스가 된다.
+  * ```text
+       <beans:bean name="/index" class="springhello.HelloController">
+            <beans:constructor-arg name="userDao" ref="userDao"/>
+        </beans:bean>
+    ```
+
+
+
+* ViewResolver 정의하는 코드
+  * ```text
+        <beans:bean name="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+            <beans:property name="prefix" value="/WEB-INF/views/" />
+            <beans:property name="suffix" value=".jsp"/>
+        </beans:bean>
+    ```
+  * 위의 코드처럼 할 경우, 요청을 한 패스의 이름을 가진 jsp파일에 결과를 전달하게 된다.
+  * 예시의 경우 “/index“가 패스 이기때문에 index.jsp파일을 찾아서 결과를 전달한다.
 
 WEB-INF하위에 views라는 디렉토리를 만들고 jsp파일 생성한다.
 

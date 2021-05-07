@@ -28,6 +28,7 @@
   * [패스트캠퍼스 Network 강의 정리](cs/network/network.md)
 * [System programming](cs/system-programming/README.md)
   * [패스트캠퍼스 System programing 강의 정리](cs/system-programming/system-programing/README.md)
+    * [17. 쉘 스크립트](cs/system-programming/system-programing/17..md)
     * [16. 시그널](cs/system-programming/system-programing/16..md)
     * [15. 다양한 IPC 기법](cs/system-programming/system-programing/15.-ipc.md)
     * [14. 프로세스 스케쥴링 관련](cs/system-programming/system-programing/untitled.md)

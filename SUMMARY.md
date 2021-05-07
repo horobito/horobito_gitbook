@@ -41,6 +41,7 @@
 * [OS](cs/os/README.md)
   * [Untitled](cs/os/untitled.md)
   * [패스트캠퍼스 OS 강의 정리](cs/os/os/README.md)
+    * [8. 스케쥴링 알고리즘 - 프로세스 상태와 스케쥴링](cs/os/os/8..md)
     * [7. 스케쥴링 알고리즘 기본](cs/os/os/7..md)
     * [6. 프로세스 스케쥴링 - 멀티 프로그래밍](cs/os/os/6..md)
     * [5. 프로세스 스케쥴링 - 배치 처리, 시분할 시스템, 멀티 테스킹](cs/os/os/5..md)

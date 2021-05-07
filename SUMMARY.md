@@ -41,6 +41,7 @@
 * [OS](cs/os/README.md)
   * [Untitled](cs/os/untitled.md)
   * [패스트캠퍼스 OS 강의 정리](cs/os/os/README.md)
+    * [5. 프로세스 스케쥴링 - 배치 처리, 시분할 시스템, 멀티 테스킹](cs/os/os/5..md)
     * [4.운영체제 구조 - 사용자와 커널 모드](cs/os/os/4..md)
     * [3. 운영체제 구조- 시스템 콜](cs/os/os/3..md)
     * [2. 운영체제의 역할 큰그림 이해 & 응용 프로그램](cs/os/os/2.-and.md)

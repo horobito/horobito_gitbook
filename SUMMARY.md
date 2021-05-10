@@ -28,6 +28,7 @@
   * [패스트캠퍼스 Network 강의 정리](cs/network/network.md)
 * [System programming](cs/system-programming/README.md)
   * [패스트캠퍼스 System programing 강의 정리](cs/system-programming/system-programing/README.md)
+    * [20. 파일 시스템과 관련된 시스템 콜에 대한 이해](cs/system-programming/system-programing/20..md)
     * [19. 메모리와 mmap](cs/system-programming/system-programing/19.-mmap.md)
     * [18. 스레드](cs/system-programming/system-programing/18..md)
     * [17. 쉘 스크립트](cs/system-programming/system-programing/17..md)

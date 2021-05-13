@@ -1,3 +1,7 @@
+---
+description: '깃 주소 :https://github.com/mrfourfour/horobito_haksik_jh_server/pulls'
+---
+
 # 프로젝트 개요
 
 ## 01. 시작일

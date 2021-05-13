@@ -4,6 +4,7 @@
 
 ## haksik\_project
 
+* [프로젝트 개요](haksik_project/undefined-6.md)
 * [도메인 설계](haksik_project/undefined/README.md)
   * [기술](haksik_project/undefined/undefined-1.md)
   * [요구사항](haksik_project/undefined/undefined.md)

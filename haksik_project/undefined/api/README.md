@@ -96,7 +96,7 @@
 
 ### 1 . 상시판매 메뉴 생
 
-* Post/menu/make/normal 
+* POST /menu/make/normal 
   * Request
     * foodName string required - 음식 이름
     * price number required - 가격
@@ -112,7 +112,7 @@
 
 ### 2. 메뉴 한정판매 기간 설정  
 
-* Post/menu/{menuId}/limit
+* POST /menu/{menuId}/limit
   * Path Variable
     * menuId number required - 한정판매를 설정할 메뉴의 아이디 
   * Request
@@ -131,7 +131,7 @@
 
 ### 3 . 메뉴 한정판매  해제
 
-* Post/menu/{menuId}/unlimit
+* GET /menu/{menuId}/unlimit
   * Path Variable
     * menuId number required -  한정판매를 해제할 메뉴의 아이디 
   * 응답코드
@@ -140,6 +140,30 @@
     * 400 Bad Request
       * 존재하지 않은 메뉴에 시도한 경우
       * 한정판매가 설정되지 않은 메뉴에 시도한 경우 
+
+
+
+
+
+### 4. 메뉴 삭제
+
+* DELETE /menu/{menuId}/delete
+  * Path Variable
+    * menuId number required - 삭제할 메뉴의 아이디 
+  * 응답코드
+    * 200 OK
+      * 삭제에 성공한 경우
+    * 400 Bad Request
+      * 존재하지 않은 메뉴를 삭제 시도 경우
+      * 이미 삭제된 메뉴를 삭제 시도한 경우
+
+
+
+### 5. 메뉴 품절 설정
+
+* GET /menu/{menuId}/soldout
+  * Path Variable
+    * menuId number required - 품절 설정할 메뉴의 아이디 
 
 
 

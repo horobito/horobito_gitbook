@@ -98,6 +98,6 @@
 ## 리팩토링 <a id="undefined-1"></a>
 
 * [1장. 맛보기 예제](undefined-1/1-..md)
-* [Untitled](undefined-1/untitled-1.md)
+* [2. 리팩토링 개론](undefined-1/untitled-1.md)
 * [Untitled](undefined-1/untitled.md)
 

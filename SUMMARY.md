@@ -6,6 +6,8 @@
 
 * [프로젝트 개요](haksik_project/undefined-6.md)
 * [도메인 설계](haksik_project/undefined/README.md)
+  * [API 명세](haksik_project/undefined/api/README.md)
+    * [참고. 이전 프로젝트 API 명세서](haksik_project/undefined/api/.-api.md)
   * [기술](haksik_project/undefined/undefined-1.md)
   * [요구사항](haksik_project/undefined/undefined.md)
 * [도메인 구현](haksik_project/undefined-1/README.md)

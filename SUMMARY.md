@@ -38,7 +38,7 @@
 
 ## DDD
 
-* [\[DDD start\] 스터디 정리](ddd/ddd-start/README.md)
+* [\[DDD start\] 정리](ddd/ddd-start/README.md)
   * [4. 리포지터리와 모델 구현](ddd/ddd-start/4..md)
   * [3. 애그리거트](ddd/ddd-start/3./README.md)
     * [애그리거트 관련 궁금증](ddd/ddd-start/3./undefined.md)
@@ -101,5 +101,5 @@
 
 * [1장. 맛보기 예제](undefined-1/1-..md)
 * [2. 리팩토링 개론](undefined-1/untitled-1.md)
-* [Untitled](undefined-1/untitled.md)
+* [3.코드의 구린내](undefined-1/untitled.md)
 

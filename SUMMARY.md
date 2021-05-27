@@ -22,6 +22,7 @@
 * [도메인 테스트 구현](haksik_project/undefined-2.md)
 * [기능 작동 실험](haksik_project/undefined-3.md)
 * [프로젝트 회고](haksik_project/undefined-5/README.md)
+  * [2021-5-27](haksik_project/undefined-5/2021-5-27.md)
   * [2021-5-13](haksik_project/undefined-5/2021-5-13.md)
 
 ## Java

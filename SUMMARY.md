@@ -27,7 +27,7 @@
 
 ## Java
 
-* [Untitled](java/untitled-1.md)
+* [\[이것이 자바다\]](java/untitled-1.md)
 
 ## Algorithm
 

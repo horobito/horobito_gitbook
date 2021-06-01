@@ -27,7 +27,8 @@
 
 ## Java
 
-* [\[이것이 자바다\]](java/untitled-1.md)
+* [\[이것이 자바다\]](java/untitled-1/README.md)
+  * [13. 제네릭](java/untitled-1/13..md)
 
 ## Algorithm
 

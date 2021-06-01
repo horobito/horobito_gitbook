@@ -40,6 +40,7 @@
 ## DDD
 
 * [\[DDD start\] 정리](ddd/ddd-start/README.md)
+  * [6. 응용 서비스와 표현 영역](ddd/ddd-start/6..md)
   * [5.  리포지터리의 조회 기능\[JPA 중심\]](ddd/ddd-start/5.-jpa.md)
   * [4. 리포지터리와 모델 구현](ddd/ddd-start/4..md)
   * [3. 애그리거트](ddd/ddd-start/3./README.md)

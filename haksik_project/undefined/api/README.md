@@ -96,19 +96,51 @@
 
 ### 1 . 상시판매 메뉴 생
 
-* POST /menu/make/normal 
+* POST /menus/make/normal 
   * Request
     * foodName string required - 음식 이름
     * price number required - 가격
     * startHour number required - 판매 시작 시간 
     * startMinute number required - 판매 시작 분 
     * endHour number required - 판매 종료 시간 
-    * endMinute  number required - 판매 종료 분 
+    * endMinute  number required - 판매 종료 분  // 추가 분량 
+    * int amount
   * 응답코드
     * 200 ok
       * 메뉴 생성에 성공
     * 400 Bad Request
-      * 잘못된 시간 입력했을 경우 
+      * 잘못된 시간 입력했을 경우  
+
+
+
+### 1.5 한정 판매 메뉴 생성 
+
+* POST /menus/make/limited 
+  * Request
+    * foodName string required - 음식 이름
+    * price number required - 가격
+    * startHour number required - 판매 시작 시간 
+    * startMinute number required - 판매 시작 분 
+    * endHour number required - 판매 종료 시간 
+    * endMinute  number required - 판매 종료 분  // 추가 분량 
+    * int amount
+  * 응답코드
+    * 200 ok
+      * 메뉴 생성에 성공
+    * 400 Bad Request
+      * 잘못된 시간 입력했을 경우  
+
+
+
+### 메뉴 수량 변경 
+
+* PUT /menus/{menuId}/change/{amount}/{request}
+  * Request\(query\)
+    * menuId number required - 수정할 메뉴 아이디 
+    * amount number required - 수정할 양 
+    * request string required - minus 인지, plus인지 
+
+
 
 ### 2. 메뉴 한정판매 기간 설정  
 

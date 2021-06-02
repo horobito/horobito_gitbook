@@ -119,4 +119,5 @@
 * [1장. 맛보기 예제](undefined-1/1-..md)
 * [2. 리팩토링 개론](undefined-1/untitled-1.md)
 * [3.코드의 구린내](undefined-1/untitled.md)
+* [6. 메소드 정의](undefined-1/6..md)
 

@@ -22,7 +22,7 @@
 * JAVA
 * Spring Framework
 * Git
-* Domain Driven Design
+* Domain Driven Design 
 
 
 

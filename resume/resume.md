@@ -2,8 +2,20 @@
 
 ## My Info
 
-1. github : [https://github.com/horobito](https://github.com/horobito) 
-2. email : odkfu1@gmail.com
+1. 이름 : 김지환 
+2. 생년월일 : 1996.02.15
+3. 학력
+   1. 고등학교 
+      1. 제주제일고등학교\[제주\]
+      2. 인문계
+      3. 2011.3 입학 -2014.2 졸
+   2. 대학교
+      1.  울산대학교\[울산\]
+      2. 첨단소재공학부
+      3.  3.63/4.
+      4.  2014.3 입학 -2020.8 졸업 
+4. github : [https://github.com/horobito](https://github.com/horobito) 
+5. email : odkfu1@gmail.com 
 
 ## Skills
 

@@ -15,7 +15,7 @@
       3.  3.63/4.
       4.  2014.3 입학 -2020.8 졸업 
 4. github : [https://github.com/horobito](https://github.com/horobito) 
-5. email : odkfu1@gmail.com 
+5. email : odkfu1@gmail.com
 
 ## Skills
 
@@ -54,7 +54,6 @@
 * 2021.4 ~   
   - 기초 CS 공부를 위해   
      패스트캠퍼스\[컴퓨터 공학 전공자 따라잡기 온라인 완주반\] 수강중    
-  
   - DDD를 적용한 Spring 서버 프로젝트 리팩토링 시작 
 
 ##  Experience
@@ -77,8 +76,6 @@
 
 *  작성 : 나  
 * 피드백 : pr 을 날린 후 commit 에 여러 사람들이 첨언해주는 것을 반영 
-
-
 
 프로젝트 주소
 

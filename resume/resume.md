@@ -14,8 +14,9 @@
       2. 첨단소재공학부
       3.  3.63/4.
       4.  2014.3 입학 -2020.8 졸업 
-4. github : [https://github.com/horobito](https://github.com/horobito) 
-5. email : odkfu1@gmail.com
+4. 블로그 : [https://app.gitbook.com/@odkfu1/s/horobito/](https://app.gitbook.com/@odkfu1/s/horobito/)
+5. github : [https://github.com/horobito](https://github.com/horobito) 
+6. email : odkfu1@gmail.com
 
 ## Skills
 

@@ -59,6 +59,7 @@
 ## DDD
 
 * [\[DDD start\] 정리](ddd/ddd-start/README.md)
+  * [10. 이벤트](ddd/ddd-start/10..md)
   * [8. 애그리거트 트랜젝션 관리](ddd/ddd-start/8..md)
   * [6. 응용 서비스와 표현 영역](ddd/ddd-start/6..md)
   * [5.  리포지터리의 조회 기능\[JPA 중심\]](ddd/ddd-start/5.-jpa.md)

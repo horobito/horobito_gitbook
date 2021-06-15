@@ -59,6 +59,7 @@
 ## DDD
 
 * [\[DDD start\] 정리](ddd/ddd-start/README.md)
+  * [11. CQRS](ddd/ddd-start/11.-cqrs.md)
   * [10. 이벤트](ddd/ddd-start/10..md)
   * [9. 도메인 모델과 BOUNDED CONTEXT](ddd/ddd-start/9.-bounded-context.md)
   * [8. 애그리거트 트랜젝션 관리](ddd/ddd-start/8..md)

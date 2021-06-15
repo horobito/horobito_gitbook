@@ -60,6 +60,7 @@
 
 * [\[DDD start\] 정리](ddd/ddd-start/README.md)
   * [10. 이벤트](ddd/ddd-start/10..md)
+  * [9. 도메인 모델과 BOUNDED CONTEXT](ddd/ddd-start/9.-bounded-context.md)
   * [8. 애그리거트 트랜젝션 관리](ddd/ddd-start/8..md)
   * [7. 도메인 서비스](ddd/ddd-start/7..md)
   * [6. 응용 서비스와 표현 영역](ddd/ddd-start/6..md)

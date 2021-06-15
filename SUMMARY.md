@@ -74,6 +74,7 @@
 
 ## CS
 
+* [OS 헷갈리는](cs/os-1.md)
 * [Network](cs/network/README.md)
   * [패스트캠퍼스 Network 강의 정리](cs/network/network.md)
 * [System programming](cs/system-programming/README.md)

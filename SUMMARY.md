@@ -35,6 +35,10 @@
 ## Algorithm
 
 * [재귀](algorithm/undefined/README.md)
+  * [문제 풀이](algorithm/undefined/undefined/README.md)
+    * [백준 1992](algorithm/undefined/undefined/1992.md)
+    * [백준 2630](algorithm/undefined/undefined/2630.md)
+  * [Untitled](algorithm/undefined/untitled.md)
   * [1. 재귀의 개념과 기본 예제들](algorithm/undefined/1..md)
 * [알고리즘 강의 정리 및 관련 문제 풀이](algorithm/untitled/README.md)
   * [Untitled](algorithm/untitled/untitled.md)

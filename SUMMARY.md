@@ -38,20 +38,8 @@
   * [문제 풀이](algorithm/undefined/undefined/README.md)
     * [백준 1992](algorithm/undefined/undefined/1992.md)
     * [백준 2630](algorithm/undefined/undefined/2630.md)
-  * [Untitled](algorithm/undefined/untitled.md)
+  * [2. Recursion의 응용](algorithm/undefined/untitled.md)
   * [1. 재귀의 개념과 기본 예제들](algorithm/undefined/1..md)
-* [알고리즘 강의 정리 및 관련 문제 풀이](algorithm/untitled/README.md)
-  * [Untitled](algorithm/untitled/untitled.md)
-  * [9. 동적 계획법](algorithm/untitled/9..md)
-  * [8. Case Study - Huffman Coding](algorithm/untitled/8.-case-study-huffman-coding.md)
-  * [7. 그래프 알고리즘](algorithm/untitled/7..md)
-  * [5. 해슁](algorithm/untitled/5..md)
-  * [4. 검색트리 2. 레드 블랙 트리](algorithm/untitled/4.-2..md)
-  * [3. 검색트리 1. 이진 검색 트리](algorithm/untitled/3.-1..md)
-  * [2. 정렬](algorithm/untitled/2./README.md)
-    * [1. 기본적인 정렬 알고리즘](algorithm/untitled/2./1..md)
-  * [1. 순환](algorithm/untitled/1./README.md)
-    * [1. Recursion의 개념 및 기본 예제](algorithm/untitled/1./1.-recursion.md)
 
 ## Spring
 

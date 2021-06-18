@@ -35,6 +35,7 @@
 ## Algorithm
 
 * [재귀](algorithm/undefined/README.md)
+  * [3. 멱집합](algorithm/undefined/3..md)
   * [문제 풀이](algorithm/undefined/undefined/README.md)
     * [백준 1992](algorithm/undefined/undefined/1992.md)
     * [백준 2630](algorithm/undefined/undefined/2630.md)

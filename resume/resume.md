@@ -88,7 +88,14 @@
 
 ### 2. 학식 서버 제작 프로젝트 
 
-* 
+* 진행기간
+  * 2021.5~ 현재 
+
+
+
+* 설계
+  * [https://app.gitbook.com/@horobito/s/horobito/~/drafts/-Me6GmryN32JC9gjfO1X/haksik\_project/undefined](https://app.gitbook.com/@horobito/s/horobito/~/drafts/-Me6GmryN32JC9gjfO1X/haksik_project/undefined)
+
 
 
 
